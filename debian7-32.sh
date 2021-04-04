@@ -18,7 +18,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
 # set repo
-wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/sources.list.debian7"
+wget -O /etc/apt/sources.list "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/sources.list.debian7"
 wget "http://www.dotdeb.org/dotdeb.gpg"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 
@@ -65,7 +65,7 @@ chmod 755 screenfetch
 cd
 echo "clear" >> .bash_profile
 echo "screenfetch" >> .bash_profile
-#wget -O screenfetch-dev "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/screenfetch-dev"
+#wget -O screenfetch-dev "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/screenfetch-dev"
 #mv screenfetch-dev /usr/bin/screenfetch
 #chmod +x /usr/bin/screenfetch
 #echo "clear" >> .profile
@@ -75,11 +75,11 @@ echo "screenfetch" >> .bash_profile
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Rizal Hidayat | 081515292117</pre>" > /home/vps/public_html/index.html
+echo "<pre>Setup by Alwan Zahy | 088216725658</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 service php5-fpm restart
 service nginx restart
@@ -102,7 +102,7 @@ service openvpn restart
 
 #konfigurasi openvpn
 cd /etc/openvpn/
-wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/client-1194.conf"
+wget -O /etc/openvpn/1194-client.ovpn "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/client-1194.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false soned
@@ -113,14 +113,14 @@ tar cf client.tar 1194-client.ovpn pass.txt
 cp client.tar /home/vps/public_html/
 
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/badvpn-udpgw"
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 # install mrtg
-wget -O /etc/snmp/snmpd.conf "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/snmpd.conf"
-wget -O /root/mrtg-mem.sh "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/mrtg-mem.sh"
+wget -O /etc/snmp/snmpd.conf "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/snmpd.conf"
+wget -O /root/mrtg-mem.sh "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/mrtg-mem.sh"
 chmod +x /root/mrtg-mem.sh
 cd /etc/snmp/
 sed -i 's/TRAPDRUN=no/TRAPDRUN=yes/g' /etc/default/snmpd
@@ -198,7 +198,7 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 #install squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/squid3.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
@@ -214,10 +214,10 @@ service vnstat restart
 # downlaod script
 cd
 wget -O speedtest_cli.py "https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py"
-wget -O bench-network.sh "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/bench-network.sh"
-wget "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/monssh"
-wget "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/user-list"
-wget "https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/conf/menu"
+wget -O bench-network.sh "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/bench-network.sh"
+wget "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/monssh"
+wget "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/user-list"
+wget "https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS/master/conf/menu"
 
 #Blockir Torrent
 iptables -A OUTPUT -p tcp --dport 6881:6889 -j DROP
@@ -249,7 +249,7 @@ service webmin restart
 
 # info
 clear
-echo "SoneD InjectoR | 081515292117" | tee log-install.txt
+echo "Alwan Zahy | 088216725658" | tee log-install.txt
 echo "===============================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Service"  | tee -a log-install.txt
