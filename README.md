@@ -6,7 +6,7 @@ Kenapa Harus fresh? karena takut terjadi bentrok port<br>
 Melakukan install service seperti SSH,VPN,Dropbear dll dengan script auto installer yang sangat mudah.<br>
 Caranya:<br>
 1. Login VPS<br>
-2. # wget https://raw.githubusercontent.com/rizal180499/Auto-Installer-VPS/master/debian7-32.sh <br>
+2. # wget https://raw.githubusercontent.com/Zahyy20/Auto-Installer-VPS-master/main/debian7-32.sh <br>
 3. # chmod +x debian7-32.sh <br>
 4. # ./debian7-32.sh <br>
 5. tunggu sampai proses selesai > reboot vps anda<br>
